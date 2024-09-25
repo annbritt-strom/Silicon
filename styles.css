@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
+    --font-family: "Manrope", sans-serif;;
     --background-color: #ffffff;
 
     --brand-primary: #6366F1;
@@ -20,6 +21,11 @@
     --brdr-radius-s: .25rem;
     --brdr-radius-m: .375rem;
     --brdr-radius-l: .5rem;  
+
+    --small-text: font-size: .875rem;
+    --medium-text: font-size: 1rem;
+    --large-text: font-size: 1.125rem;
+
 }
 
 /*UTILITY START*/
@@ -39,21 +45,17 @@
     }
 }
 
+a:link {
+    text-decoration: none;
+}
+
 h1, h2, h3 {
     font-weight: 800;
     color: var(--clr-gray-900);
 }
 
-.small-text {
-    font-size: .875rem;
-}
-
-.medium-text {
-    font-size: 1rem;
-}
-
-.larg-text {
-    font-size: 1.125rem;
+button > img {
+    padding-right: .5rem;
 }
 
 /*UTILITY END*/
@@ -67,7 +69,7 @@ h1, h2, h3 {
 }
 
 body {
-    font-family: "Manrope", sans-serif;
+    font-family: var(--font-family);
     background-color: var(--background-color);   
 }
 
@@ -80,13 +82,45 @@ header {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
 
     .left-nav {
         display: flex;
         flex-direction: row;
 
         align-items: center;
-        gap: 3rem;
+        gap: 2.9rem;
+
+        a {
+            font-family: var(--font-family);
+            color: var(--clr-gray-800);
+            font-size: var(--medium-text);
+            font-weight: 600;
+            
+            & :hover {
+                color: var(--brand-primary);
+            }
+        }
+    }
+
+    .right-nav {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        gap: 2rem;
+
+        .theme-toggle {
+            display: flex;
+            gap: 1rem;
+        }
+
+        p {
+            color: var(--clr-gray-700);
+            font-size: var(--medium-text);
+            font-weight: 600;
+        }
     }
 
     #signup button{
@@ -96,9 +130,17 @@ header {
         padding-inline: 1rem;
         padding-block: .5rem;
 
+        display: flex;
+        align-items: center;
 
         border: none;
         border-radius: var(--brdr-radius-s);
+
+        p {
+            color: #ffffff;
+            font-size: var(--large-text);
+            text-shadow: 0 4px 4px #0000003b;
+        }
     }
 }
 
@@ -110,8 +152,8 @@ header {
     width: var(--_w);
     height: var(--_h);
 
-    display: inline-block;
     position: relative;
+    display: inline-block;
 
     input[type="checkbox"] {
         appearance: none;
@@ -130,21 +172,20 @@ header {
     .slider::before {
         content: '';
         position: absolute;
-        top: calc(50% * var(--_h));
-        height: 85%;
+        height: 80%;
         aspect-ratio: 1;
+        top: 2.5px;
+        left: 2px;
         border-radius: 50%;
         background-color: #ffffff;
         box-shadow: 0 0 5px #00000085;
+
+        -webkit-transition: .3s;
     }
 
     input[type="checkbox"]:checked ~ .slider::before{
-        left: calc(100% - var(--_h));
+        transform: translateX(22px);
     }
-}
-
-button > img {
-    padding-right: .5rem;
 }
 
 footer {
