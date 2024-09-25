@@ -1,0 +1,20 @@
+:root {
+    
+    --brand-primary: #6366F1;
+    --brand-success: #22C55E;
+    
+    --brdr-radius-s: .25rem;
+    --brdr-radius-m: .375rem;
+    --brdr-radius-l: .5rem;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+}
