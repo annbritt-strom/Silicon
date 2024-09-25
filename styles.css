@@ -22,12 +22,43 @@
     --brdr-radius-l: .5rem;  
 }
 
-.container {    
+/*UTILITY START*/
+
+.container {  
+    width: 100%;  
     display: flex;
-    width: 100%;    
+    justify-content: center;
+    margin: 0 auto;
+    padding-inline: 1rem;
+
+
+    background-color: plum;
+
+    @media (width >= 1200px) {
+        max-width: 70%;
+    }
 }
 
-/*CSS for page start*/
+h1, h2, h3 {
+    font-weight: 800;
+    color: var(--clr-gray-900);
+}
+
+.small-text {
+    font-size: .875rem;
+}
+
+.medium-text {
+    font-size: 1rem;
+}
+
+.larg-text {
+    font-size: 1.125rem;
+}
+
+/*UTILITY END*/
+
+/*CSS START*/
 
 * {
     padding: 0;
@@ -37,16 +68,96 @@
 
 body {
     font-family: "Manrope", sans-serif;
-    background-color: var(--background-color);
-    
+    background-color: var(--background-color);   
 }
 
 header {
 
 }
 
-footer {
-    height: 130px;
+.main-nav {
+    font-family: "Manrope", sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .left-nav {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        gap: 3rem;
+    }
+
+    #signup button{
+        font-family: "Manrope", sans-serif;
+        color: #ffffff;
+        background-color: var(--brand-primary);
+        padding-inline: 1rem;
+        padding-block: .5rem;
+
+
+        border: none;
+        border-radius: var(--brdr-radius-s);
+    }
 }
 
-/*CSS for page end*/
+.toggle {
+    --_w: 46px;
+    --_h: 24px;
+    --_ball-size-ratio: 1;
+
+    width: var(--_w);
+    height: var(--_h);
+
+    display: inline-block;
+    position: relative;
+
+    input[type="checkbox"] {
+        appearance: none;
+    }
+
+    .slider {
+        position: absolute;
+        inset: 0;
+
+        background-color: var(--clr-gray-600);
+        border-radius: 100vw;
+        
+        cursor: pointer;
+    }
+
+    .slider::before {
+        content: '';
+        position: absolute;
+        top: calc(50% * var(--_h));
+        height: 85%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px #00000085;
+    }
+
+    input[type="checkbox"]:checked ~ .slider::before{
+        left: calc(100% - var(--_h));
+    }
+}
+
+button > img {
+    padding-right: .5rem;
+}
+
+footer {
+    background-color: rgb(138, 138, 255);
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    max-width: --var(max-width);
+
+    .small-text{
+        color: var(--clr-gray-400) ;
+    }
+}   
+
+/*CSS END*/
