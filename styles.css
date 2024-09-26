@@ -54,10 +54,6 @@ h1, h2, h3 {
     color: var(--clr-gray-900);
 }
 
-button > img {
-    padding-right: .5rem;
-}
-
 .hidden {
     display: none;
 }
@@ -131,6 +127,11 @@ header {
         }
     }
 
+    button > img {
+        padding-right: .5rem;
+    }
+
+
     #signup button{
         font-family: "Manrope", sans-serif;
         color: #ffffff;
@@ -149,13 +150,12 @@ header {
             font-size: var(--large-text);
             text-shadow: 0 4px 4px #0000003b;
         }
-    }
-}
 
-#main {
-    display: grid;
-    width: 100%;
-    height: 100%;
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
 }
 
 .toggle {
@@ -199,6 +199,36 @@ header {
 
     input[type="checkbox"]:checked ~ .slider::before{
         transform: translateX(21px);
+    }
+}
+
+#main {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.main-grid {
+    display: grid;
+}
+
+.discover-more {
+    button {
+        background-color: #ffffff;
+        border-radius: 50%;
+        border: none;
+        height: 3rem;
+        aspect-ratio: 1;
+        box-shadow: 0 4.4px .75rem rgba(19, 16, 34, .06);
+        box-shadow: 0 4.4px .5rem rgba(19, 16, 34, .1);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
