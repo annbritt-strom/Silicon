@@ -6,7 +6,7 @@
 
     --brand-primary: #6366F1;
     --brand-success: #22C55E;
-    --linear-gradient: linear-gradient(to top, #6365f118, #d846ef0e, #ffffff);
+    --linear-gradient: linear-gradient(to top, rgba(99, 102, 242, 0.10) 0%, rgba(220, 72, 239, .05) 42%, rgba(241, 244, 253, .07) 83%);
 
     --clr-gray-100: #F3F6FF;
     --clr-gray-200: #EFF2FC;
@@ -58,6 +58,10 @@ button > img {
     padding-right: .5rem;
 }
 
+.hidden {
+    display: none;
+}
+
 /*UTILITY END*/
 
 /*CSS START*/
@@ -74,7 +78,11 @@ body {
 }
 
 header {
-     background-color: #22C55E;
+    .gradient-div{
+        width: 100%;
+        height: 100%;
+        background-image: var(--linear-gradient);
+    }
 }
 
 .main-nav {
@@ -144,6 +152,12 @@ header {
     }
 }
 
+#main {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
 .toggle {
     --_w: 46px;
     --_h: 24px;
@@ -196,8 +210,9 @@ footer {
     align-items: center;
     max-width: --var(max-width);
 
-    .small-text{
-        color: var(--clr-gray-400) ;
+    p {
+        font-size: var(--small-text);
+        color: var(--clr-gray-600) ;
     }
 }   
 
