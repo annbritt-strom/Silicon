@@ -4,3 +4,7 @@
 :root {
     --font-family: 'Manrope', sans-serif;
 }
+
+.container {
+    @apply mx-auto w-7/10
+}
