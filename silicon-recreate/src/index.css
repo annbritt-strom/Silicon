@@ -79,13 +79,13 @@ p {
 .xs-text {
     @apply text-[0.75rem] text-body-text-primary;
 }
-.s-text {
+.sm-text {
     @apply text-[0.875rem] text-body-text-primary;
 }
-.m-text {
+.md-text {
     @apply text-[1rem] text-body-text-primary;
 }
-.l-text {
+.lg-text {
     @apply text-[1.125rem] text-body-text-primary;
 }
 .xl-text {
