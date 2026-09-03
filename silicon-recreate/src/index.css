@@ -1,10 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import 'tailwindcss';
 
-:root {
-    --font-family: 'Manrope', sans-serif;
+@theme {
+    --font-sans: 'Manrope', sans-serif;
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: var(--color-gray-100);
+
+    --color-brand-primary: #6366F1;
+    --brand-gradient: linear-gradient(to top, #6366F1 0%, #8B5CF6 50%, #D946EF 100%);
+
+    --color-system-success: #22C55E;
+
+    --color-gray-100: #F3F6FF;
+    --color-gray-200: #EFF2FC;
+    --color-gray-300: #E2E5F1;
+    --color-gray-400: #D4D7E5;
+    --color-gray-500: #B4B7C9;
+    --color-gray-600: #9397AD;
+    --color-gray-700: #565973;
+    --color-gray-800: #33354D;
+    --color-gray-900: #0B0F19;
+
+    /* text color */
+    --color-display-text: var(--color-gray-900);
+    --color-heading-text: var(--color-gray-900);
+    --color-body-text-primary: var(--color-gray-700);
+    --color-body-text-secondary: var(--color-gray-600);
+    --color-nav-text: var(--color-gray-800);
+    --color-nav-text-hover: var(--color-brand-primary);
+
+}
+
+/* Darkmode CSS */
+.dark {
+    color-scheme: dark;
+
+    /* TO-DO: Define dark mode styles */
+}
+
+/* Typography */
+
+body {
+    @apply font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+}
+
+h1 {
+    @apply text-[2.5rem] leading-[1.3];
+}
+
+h2 {
+    @apply text-[2rem] leading-[1.3];
+}
+
+h3 {
+    @apply text-[1.75rem] leading-[1.3];
+}
+
+h4 {
+    @apply text-[1.5rem] leading-[1.4];
+}
+
+h5 {
+    @apply text-[1.25rem] leading-[1.4];
+}
+
+h6 {
+    @apply text-[1rem] leading-[1.4];
+}
+
+p {
+    @apply leading-[1.6];
+}
+
+.xs-text {
+    @apply text-[0.75rem] text-body-text-primary;
+}
+.s-text {
+    @apply text-[0.875rem] text-body-text-primary;
+}
+.m-text {
+    @apply text-[1rem] text-body-text-primary;
+}
+.l-text {
+    @apply text-[1.125rem] text-body-text-primary;
+}
+.xl-text {
+    @apply text-[1.25rem] text-body-text-primary;
+}
+
+.text-lead {
+    @apply text-[1.5rem] leading-[1.6] text-body-text-primary;
 }
 
 .container {
-    @apply mx-auto w-7/10
+    @apply mx-auto w-7/10;
+}
+
+/* buttons */
+.btn-lg {
+    @apply rounded-lg flex items-center justify-center bg-brand-primary;
+}
+
+.btn-md {
+    @apply rounded-md flex items-center justify-center bg-brand-primary;
+}
+    
+.btn-sm {
+    @apply rounded-sm flex items-center justify-center bg-brand-primary;
 }
