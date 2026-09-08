@@ -8,7 +8,7 @@ import NewsletterSection from '../sections/NewsletterSection'
 
 const LandingPage = () => {
   return (
-    <div className='container flex flex-col'>
+    <div className='flex flex-col'>
       <HeroSection />
       <SponsorSection />
       <FeaturesSection />

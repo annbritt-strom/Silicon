@@ -7,7 +7,7 @@
     --color-bg-secondary: var(--color-gray-100);
 
     --color-brand-primary: #6366F1;
-    --brand-gradient: linear-gradient(to top, #6366F1 0%, #8B5CF6 50%, #D946EF 100%);
+    --background-image-brand-gradient: linear-gradient(to top, #6366F1 5%, #8B5CF6 50%, #D946EF 90%, #FFFFFF 100%);
 
     --color-system-success: #22C55E;
 
@@ -101,22 +101,28 @@ p {
 }
 
 .nav-text {
-    @apply text-nav-text hover:text-nav-text-hover font-semibold;
-}
-
-.container {
-    @apply mx-auto w-7/10;
+    @apply text-nav-text hover:text-nav-text-hover font-semibold text-[1rem];
 }
 
 /* buttons */
 .btn-lg {
-    @apply rounded-lg flex items-center justify-center gap-2 text-white bg-brand-primary px-8 py-[0.81rem];
+    @apply rounded-lg flex items-center justify-center text-white bg-brand-primary px-8 py-[0.81rem];
 }
 
 .btn-md {
-    @apply rounded-md flex items-center justify-center gap-2 text-white bg-brand-primary px-7 py-[0.69rem];
+    @apply rounded-md flex items-center justify-center text-white bg-brand-primary px-7 py-[0.69rem];
 }
     
 .btn-sm {
-    @apply rounded-sm flex items-center justify-center gap-2 text-white bg-brand-primary px-5 py-[0.56rem];
+    @apply rounded-sm flex items-center justify-center text-white bg-brand-primary px-6 py-2;
+}
+
+/* classes */
+
+.container {
+    @apply mx-auto max-w-7xl;
+}
+
+.sponsor-logo {
+    @apply flex items-center justify-center border border-gray-300 rounded-lg p-4 h-25 w-49 object-contain;
 }
