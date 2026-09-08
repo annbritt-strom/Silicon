@@ -8,12 +8,24 @@ import LogoSix from '../assets/images/logos/logoipsum-6.svg'
 const SponsorSection = () => {
   return (
     <div className='flex items-center justify-center gap-6 py-6'>
-      <img src={LogoOne} alt='Logo One' />
-      <img src={LogoTwo} alt='Logo Two' />
-      <img src={LogoThree} alt='Logo Three' />
-      <img src={LogoFour} alt='Logo Four' />
-      <img src={LogoFive} alt='Logo Five' />
-      <img src={LogoSix} alt='Logo Six' />
+      <div className='sponsor-logo'>
+        <img src={LogoOne} alt='Logo One' />
+      </div>
+      <div className='sponsor-logo'>
+        <img src={LogoTwo} alt='Logo Two' />
+      </div>      
+      <div className='sponsor-logo'>
+        <img src={LogoThree} alt='Logo Three' />
+      </div>      
+      <div className='sponsor-logo'>
+        <img src={LogoFour} alt='Logo Four' />
+      </div>
+      <div className='sponsor-logo'>
+        <img src={LogoFive} alt='Logo Five' />
+      </div>
+      <div className='sponsor-logo'>
+        <img src={LogoSix} alt='Logo Six' />
+      </div>
     </div>
   )
 }

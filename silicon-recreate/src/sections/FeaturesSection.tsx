@@ -1,49 +1,5 @@
-import CardIcon from '../assets/images/icons/credit-card-icon.svg'
-import DataSecurityIcon from '../assets/images/icons/data-security-icon.svg'
-import StatisticsIcon from '../assets/images/icons/statistics-icon.svg'
-import SupportIcon from '../assets/images/icons/support-icon.svg'
-import CashbackIcon from '../assets/images/icons/cashback-icon.svg'
-import HappyFaceIcon from '../assets/images/icons/happy-face-icon.svg'
 import AppFeaturesImage from '../assets/images/app-preview/app-features.svg'
-
-const features = [
-  {
-    id: 1,
-    icon: CardIcon,
-    title: 'Easy Payments',
-    description: 'Id mollis consectetur congue egestas egestas suspendisse blandit justo.',
-  },  
-  {
-    id: 2,
-    icon: DataSecurityIcon,
-    title: 'Data Security',
-    description: 'Augue pulvinar justo, fermentum fames aliquam accumsan vestibulum non. ',
-  },
-  {
-    id: 3,
-    icon: StatisticsIcon,
-    title: 'Cost Statistics',
-    description: 'Mattis urna ultricies non amet, purus in auctor non. Odio vulputate ac nibh.',
-  },
-  {
-    id: 4,
-    icon: SupportIcon,
-    title: 'Support 24/7',
-    description: 'A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris.',
-  },
-  {
-    id: 5,
-    icon: CashbackIcon,
-    title: 'Regular Cashback',
-    description: 'Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet eleifend.',
-  },
-  {
-    id: 6,
-    icon: HappyFaceIcon,
-    title: 'Top Standards',
-    description: 'Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu.',
-  },
-]
+import { appFeatures } from '../data/features'
 
 interface FeatureCardProps {
   icon: string
@@ -53,27 +9,26 @@ interface FeatureCardProps {
 
 function FeatureCard({icon, title, description}: FeatureCardProps){
   return(
-    <div>
+    <div className='flex flex-col gap-3'>
       <div>
-        <img src={icon} alt={title} />
+        <img src={icon} alt='' />
       </div>
       <h5>{title}</h5>
-      <p>{description}</p>
+      <p className='sm-text'>{description}</p>
     </div>
   )
 }
 
 const FeaturesSection = () => {
   return (
-    <div>
-      <img src={AppFeaturesImage} alt='Features' />
-      <div>
+    <section className='container flex items-center justify-between gap-16 py-20'>
+      <img src={AppFeaturesImage} alt='Silicon banking app preview' className='max-h-150 flex-1' />
+      <div className='flex-1'>
         <h2>App Features</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.</p>
-      
-        {/* Feature list */}
-        <div>
-          {features.map((feature) => (
+        <p className='lg-text max-w-lg pt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.</p>
+
+        <div className='grid grid-cols-2 gap-x-10 gap-y-9 pt-11'>
+          {appFeatures.map((feature) => (
             <FeatureCard
               key={feature.id}
               icon={feature.icon}
@@ -83,7 +38,7 @@ const FeaturesSection = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
